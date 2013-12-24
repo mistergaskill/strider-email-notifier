@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-              
+
         <title><%= subject %></title>
-		
+
 	<style type="text/css">
 		#outlook a{
 			padding:0;
@@ -220,7 +220,7 @@
                                 	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
                                     	<tr>
                                             <td valign="top" class="bodyContent" style="border-collapse: collapse;background-color: #FFFFFF;">
-                                
+
                                                 <!-- // Begin Module: Standard Content \\ -->
                                                 <table border="0" cellpadding="10" cellspacing="0" width="100%">
                                                     <tr>
@@ -229,15 +229,23 @@
                                                             	<table border="0" cellpadding="10" cellspacing="0" width="100%">
                                                             		<tr>
                                                             			<th width=150 style="text-align: right;">Project:</th>
-                                                            			<td><%= display_name %>
+                                                            			<td><%= displayName %>
                                                             		</tr>
+                                                                <tr>
+                                                                  <th width=150 style="text-align: right;">Branch:</th>
+                                                                  <td><%= branchName %>
+                                                                </tr>
+                                                                <tr>
+                                                                  <th width=150 style="text-align: right;">Author:</th>
+                                                                  <td><%= author %>
+                                                                </tr>
                                                             		<tr>
                                                             			<th width=150 style="text-align: right;">Completed At:</th>
-                                                            			<td><%= finish_time %>
+                                                            			<td><%= finishTime %>
                                                             		</tr>
                                                             		<tr>
                                                             			<th width=150 style="text-align: right;">Duration:</th>
-                                                            			<td><%= elapsed_time %>
+                                                            			<td><%= elapsedTime %>
                                                             		</tr>
                                                             	</table>
                                                             	<br>
@@ -245,21 +253,21 @@
 
                                                                 <a class="h4" href="<%= url %>" target="_blank" style="color: #336699;font-weight: normal;text-decoration: underline;">View Test Output</a>
                                                                 <br>
-                                                                <br>                                                                
+                                                                <br>
                                                                 -----BEGIN LOG TAIL (last 4kb)-----
                                                                 <p style="word-wrap: break-word; width: 580px; font-family: Courier;">
-                                                                <%= log_tail %>
+                                                                <%= logTail %>
                                                                 </p>
                                                                 -----END LOG TAIL (last 4kb)-----<br>
                                                                 <br>
                                                                 <a class="h4" href="<%= url %>" target="_blank" style="color: #336699;font-weight: normal;text-decoration: underline;">View Test Output</a>
-                                                                
+
                                                             </div>
                                                         </td>
                                                     </tr>
                                                 </table>
                                                 <!-- // End Module: Standard Content \\ -->
-                                                
+
                                             </td>
                                         </tr>
                                     </table>
@@ -276,7 +284,7 @@
                                                         <td valign="top" width="100%" style="border-collapse: collapse;">
                                                             <br>
                                                             <div style="color: #707070;font-family: Arial;font-size: 14px;line-height: 150%;text-align: center;">
-                                                                
+
                                                                 <br>
                                                             </div>
                                                             <br>
