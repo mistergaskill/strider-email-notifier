@@ -43,7 +43,7 @@
     "istanbul": "~0.2.0"
   },
   "dependencies": {
-    "strider-mailer": "~0.0",
+    "strider-mailer": "~0.1",
     "async": "~0.2.9",
     "underscore": "~1.5.2",
     "jade": "~0.35.0",
