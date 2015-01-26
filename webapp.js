@@ -1,5 +1,7 @@
-var jobHandler = require('./lib/handler')
-  , createMailer = require('strider-mailer')
+'use strict';
+
+var createMailer = require('strider-mailer');
+var jobHandler = require('./lib/handler');
 
 module.exports = {
   config: {
@@ -13,14 +15,15 @@ module.exports = {
     io.on('plugin.emailNotifier.send', function (jobId, pluginConfig) {
       var onDoneAndSaved = function (job) {
         if (job._id.toString() === jobId.toString()) {
-          io.removeListener('job.doneAndSaved', onDoneAndSaved)
-          context.pluginConfig = pluginConfig
-          context.createMailer =  createMailer
-          jobHandler(job, context)
+          context.pluginConfig = pluginConfig;
+          context.createMailer = createMailer;
+          
+          io.removeListener('job.doneAndSaved', onDoneAndSaved);
+          jobHandler(job, context);
         }
-      }
-      io.on('job.doneAndSaved', onDoneAndSaved)
-    })
+      };
+      
+      io.on('job.doneAndSaved', onDoneAndSaved);
+    });
   }
-}
-
+};
