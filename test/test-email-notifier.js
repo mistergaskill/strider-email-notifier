@@ -116,7 +116,7 @@ describe('Email Notifier', function () {
     })
   })
 
-  it('should send emails when job state has not changed and notify is noisy-fail (both failed, different codes)', function (done) {
+  it('should send emails when job state has not changed (noisy-fail, both failed, different codes)', function (done) {
     var job = createJob(1)
       , context = createContext([job, createJob(2)], { notify: 'noisy-fail' })
     handler(job, context, function (error, response) {
@@ -125,7 +125,7 @@ describe('Email Notifier', function () {
     })
   })
 
-  it('should not send any emails when job state has not changed and notify is noisy-fail (both successful)', function (done) {
+  it('should not send any emails when job state has not changed (noisy-fail, both successful)', function (done) {
     var job = createJob(0)
       , context = createContext([job, createJob(0)], { notify: 'noisy-fail' })
     handler(job, context, function (error, response) {
